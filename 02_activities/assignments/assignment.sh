@@ -35,9 +35,10 @@ cp /*server*.log ./data/raw ./data/processed/server_logs
 cp /*user*.log ./data/raw ./data/processed/user_logs
 cp /*event*.log ./data/raw ./data/processed/event_logs
 # 7. For user privacy, remove all files containing IP addresses (files with "ipaddr" in the filename) from ./data/raw and ./data/processed/user_logs
-
+rm *ipaddr ./data/raw ./data/processed/user_logs
 # 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
-
+touch ./data/inventory.txt
+cp ./data/processed/* ./data/inventory.txt
 
 
 ###########################################
